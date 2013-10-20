@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone-no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+	<title>500papers.com</title>
+    
+    
+    
+	<link href="styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo.mobile.exported.css" rel="stylesheet" />
+	<link href="styles/kendo.default.min.css" rel="stylesheet" />
+	<link href="styles/kendo.mobile.all.min.css" rel="stylesheet" /><script src="js/jquery.min.js"></script><script src="js/kendo.all.min.js"></script>
+    <script type="text/javascript">
+  $(document).ready(function(){
+   var url = 'post_title.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+           
+       $('#home').append('<li><h2><a href='+data.guid+' style="text-decoration:none">'+data.title+'</a></h2><h3><a href='+data.guid+' style="text-decoration:none">'+data.date+'</a></h3></li>');
+    
+    });
+ 
+   });
+   
+   
+                    });
+                 
+                
+  $(document).ready(function(){
+   var url = 'post_title_deals.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+       $('#deals').append('<li><h2><a href='+data.guid+' style="text-decoration:none" target="_top">'+data.title+'</a></h2><h3>'+data.date+'</h3></li>');
+     
+    });
+ 
+   });
+                    });
+                    
+                     $(document).ready(function(){
+   var url = 'post_title_downloads.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+           
+       $('#downloads').append('<li><h2><a href='+data.guid+' style="text-decoration:none" target="_top">'+data.title+'</a></h2><h3>'+data.date+'</h3></li>');
+  
+    });
+ 
+   });
+                    });
+                     $(document).ready(function(){
+   var url = 'post_title_launched.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+    
+       $('#launched').append('<li><h2><a href='+data.guid+' style="text-decoration:none" target="_top">'+data.title+'</a></h2><h3>'+data.date+'</h3></li>');
+     
+    });
+ 
+   });
+                    }); $(document).ready(function(){
+   var url = 'post_title_search.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+          
+       $('#search').append('<li><h2><a href='+data.guid+' style="text-decoration:none" target="_top">'+data.title+'</a></h2><h3>'+data.date+'</h3></li>');
+     
+    });
+ 
+   });
+                    }); $(document).ready(function(){
+   var url = 'post_title_tech.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+          
+       $('#tech').append('<li><h2><a href='+data.guid+' style="text-decoration:none" target="_top">'+data.title+'</a></h2><h3>'+data.date+'</h3></li>');
+ 
+    });
+ 
+   });
+                    });
+                 
+                 $(document).ready(function(){
+   var url = 'post_title_tips.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+           
+       $('#tips').append('<li><h2><a href='+data.guid+' style="text-decoration:none" target="_top">'+data.title+'</a></h2><h3>'+data.date+'</h3></li>');
+  
+    });
+ 
+   });
+                    });
+                 
+              
+                 
+                   $(document).ready(function(){
+   var url = 'post_title_soft.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+           
+       $('#soft').append('<h2>'+data.title+'</h2><h3>'+data.date+'</h3><pre>'+data.content+'</pre><br>');  
+    });
+ 
+   });
+                    });
+                 
+                   $(document).ready(function(){
+   var url = 'post_title_contact.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+           
+       $('#contact').append('<h2>'+data.title+'</h2><h3>'+data.date+'</h3><pre>'+data.content+'</pre><br>');
+  
+    });
+ 
+   });
+                    });
+                       $(document).ready(function(){
+   var url = 'post_title_ebook.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+           
+       $('#book').append('<h2>'+data.title+'</h2><h3>'+data.date+'</h3><pre>'+data.content+'</pre><br>');
+  
+    });
+ 
+   });
+                    });
+                 
+                     
+                 </script>
+</head>
+<body>
+<div data-layout="drawer-layout" data-role="view" data-title="500PAPERS" id="drawer-home">
+<h3>Latest Posts</h3>
+
+<ul class="inboxList" data-role="listview" id="home">
+</ul>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Traffic Report" id="drawer-traffic">
+
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Tech Zone" id="drawer-tech">
+<h3>Latest Tech Posts</h3>
+
+<ul class="inboxList" data-role="listview" id="tech">
+</ul>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Best Deals" id="drawer-deals">
+<h3>Latest Deals Posts</h3>
+
+<ul class="inboxList" data-role="listview" id="deals">
+</ul>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Software" id="drawer-soft">
+<div id="soft"></div>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="E-books" id="drawer-book">
+<div id="book"></div>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="About Us" id="drawer-about">
+<h3>500papers.com</h3>
+<p>500papers.com is a way to present information that is useful to you.it informs about lust lunched mobile,tablet,phone,movie,software and tutorial and some tips and tricks.</p>
+
+    <br><br><br>
+    <p>Like us and get updated for more inter­est­ing and valuable information</p>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Contact Form" id="drawer-contact">
+<div id="contact"></div>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Just Launched" id="drawer-launched">
+<h3>Latest Launched Posts</h3>
+
+<ul class="inboxList" data-role="listview" id="launched">
+</ul>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Tips and Tricks" id="drawer-tips">
+<h3>Latest T &amp; T Posts</h3>
+
+<ul class="inboxList" data-role="listview" id="tips">
+</ul>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Hot Searches" id="drawer-search">
+<h3>Latest Hot Searches Posts</h3>
+
+<ul class="inboxList" data-role="listview" id="search">
+</ul>
+</div>
+
+<div data-layout="drawer-layout" data-role="view" data-title="Newly Downloads" id="drawer-downloads">
+
+
+<ul class="inboxList" data-role="listview" id="downloads">
+</ul>
+</div>
+
+<div data-role="drawer" data-views="['/','drawer-book','drawer-contact','drawer-traffic', 'drawer-about','drawer-tech', 'drawer-soft','drawer-deals', 'drawer-downloads', 'drawer-launched', 'drawer-tips', 'drawer-search', '/mobile/m/drawer/index.html']" id="my-drawer" style="width: 270px">
+<ul data-role="listview" data-type="group">
+	<li>Categories
+	<ul>
+		<li data-icon="inbox"><a data-transition="none" href="#drawer-tech">Tech Zone</a></li>
+		<li data-icon="star"><a data-transition="none" href="#drawer-deals">Best Deals of Week</a></li>
+		<li data-icon="downloads"><a data-transition="none" href="#drawer-downloads">Added Downloads</a></li>
+		<li data-icon="sent"><a data-transition="none" href="#drawer-launched">Just Launched</a></li>
+		<li data-icon="featured"><a data-transition="none" href="#drawer-tips">Tip n Tricks</a></li>
+		<li data-icon="organize"><a data-transition="none" href="#drawer-search">Hot Searches</a></li>
+	</ul>
+	</li>
+	<li>Pages
+	<ul>
+		<li><a href="#drawer-soft">Software</a></li>
+		<li><a href="#drawer-book">E-books</a></li>
+		<li><a href="#drawer-contact">Contact Form</a></li>
+		<li><a href="#drawer-about">About Us</a></li>
+	</ul>
+	</li>
+	
+</ul>
+</div>
+
+<div data-role="layout" data-id="drawer-layout">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="drawer-button" data-align="left"></a>
+            <span data-role="view-title"></span>
+            <a data-align="right" data-role="button" class="nav-button" href="#drawer-home">Index</a>
+        </div>
+    </header>
+</div>
+<script>
+    // reset global drawer instance, for demo purposes
+    kendo.mobile.ui.Drawer.current = null;
+</script>
+<style type="text/css">.km-ios #my-drawer .km-content, .km-android #my-drawer .km-content, .km-blackberry #my-drawer .km-content,
+    .km-ios #my-drawer .km-list > li, .km-android #my-drawer .km-list > li, .km-blackberry #my-drawer .km-list > li,
+    .km-ios #my-drawer .km-listview-link > .km-icon, .km-android #my-drawer .km-listview-link > .km-icon, .km-blackberry #my-drawer .km-listview-link > .km-icon,
+    .km-ios #my-drawer .km-list li > .km-icon, .km-android #my-drawer .km-list li > .km-icon, .km-blackberry #my-drawer .km-list li > .km-icon
+    {
+        background-color: #4e4e4e;
+        color: #fff;
+    }
+
+    .km-ios #my-drawer .km-group-title,
+    .km-blackberry #my-drawer .km-group-title
+    {
+        background-color: #6e6e6e;
+        color: #fff;
+    }
+
+    .km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
+    .km-inbox:before, .km-inbox:after { content: "\E0B0"; }
+    .km-sent:before, .km-sent:after { content: "\E0C6"; }
+    .km-trash:before, .km-trash:after { content: "\E0C3"; }
+    .km-spam:before, .km-spam:after { content: "\E0C5"; }
+    .km-star:before, .km-star:after { content: "\E0D7"; }
+    .km-settings:before, .km-settings:after { content: "\E0DA"; }
+    .km-off:before, .km-off:after { content: "\E0B9"; }
+
+    .inboxList
+    {
+        font-size: .8em;
+    }
+
+    .inboxList p,
+    .inboxList h2,
+    .inboxList h3
+    {
+        margin: 5px 2px;
+    }
+
+    .inboxList p,
+    .inboxList h3
+    {
+        color: #777;
+    }
+
+    .inboxList h3.time
+    {
+        color: #369;
+        float: left;
+        margin-right: 10px;
+    }
+</style>
+<script>
+    var app = new kendo.mobile.Application(document.body);
+</script></body>
+</html>
